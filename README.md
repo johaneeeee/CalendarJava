@@ -1,77 +1,80 @@
-# Java Year Calendar Application 📅
+# Java Calendar Application 📅
 
-A dual-view calendar application built with Java Swing that displays a full year overview and detailed monthly views.
+A dual-view calendar application built with Java Swing for my **Object-Oriented Programming (OOP)** module.
 
 ## ✨ Features
 
-### Main View (Year Overview)
-- Displays all 12 months in a 3×4 grid
-- Each month shows day names (Mon-Sun) and dates
+### Year View
+- 12 months displayed in 3×4 grid
+- Each month shows day names and dates
+- Sundays in red
 - Click any month to open detailed view
 
-### Detailed Calendar View
-- Navigate between months (previous/next buttons)
-- Navigate between years
+### Monthly View
+- Detailed calendar with 5×7 day grid
+- Navigate between months and years
 - Current day highlighted in pink
-- Sunday dates shown in red
-- Clean, intuitive interface
+- Sundays in red
+
+## 🧱 OOP Concepts Demonstrated
+
+### 1. **Classes and Objects**
+- `Year_Calendar_Application` class (main window)
+- `Calendar` class (detailed view)
+- Multiple objects created from JFrame, JPanel, JButton
+
+### 2. **Inheritance**
+```java
+public class Year_Calendar_Application extends JFrame
+class Calendar extends JFrame
+```
+Both classes inherit from JFrame, reusing its properties and methods
+
+### 3. **Encapsulation**
+- Private instance variables (`private JButton[][] dayButtons`)
+- Public methods to access functionality
+- Data hidden within classes
+
+### 4. **Inner Class**
+```java
+private class MonthPanelClickListener implements MouseListener
+```
+Inner class handles mouse events for month panels
+
+### 5. **Polymorphism**
+- MouseListener interface implemented
+- ActionListener with lambda expressions
+- Different button behaviors through same interface
+
+### 6. **Composition**
+```java
+JPanel monthPanel = new JPanel();
+monthPanel.add(monthLabel, BorderLayout.NORTH);
+monthPanel.add(dayNamesPanel, BorderLayout.CENTER);
+monthPanel.add(daysPanel, BorderLayout.SOUTH);
+```
+Complex objects built from simpler ones
 
 ## 📊 Data Structures Used
 
-### 1. **2D Arrays** 
-```java
-JButton[][] dayButtons = new JButton[5][7];  // Grid for days
-LocalDate[][] daysInMonth = new LocalDate[5][7];  // Store dates
-```
+- **2D Arrays**: Store day buttons and dates in grid
+- **LocalDate**: Modern date handling
+- **GridLayout**: Organize GUI components
 
-### 2. **LocalDate Class** (Java Time API)
-- Modern date handling (instead of old Date/Calendar)
-- Easy date calculations: `firstDayOfMonth.lengthOfMonth()`
-- Date comparison: `date.isEqual(today)`
+## 🔍 Key Algorithms
 
-### 3. **GridLayout** (GUI Organization)
-- Main view: 3×4 grid for 12 months
-- Calendar view: 5×7 grid for days
-- Day names: 1×7 grid
-
-## 🔍 Algorithms
-
-### 1. **First Day of Month Calculation**
-```java
-LocalDate firstDay = LocalDate.of(year, month + 1, 1);
-int dayOfWeek = firstDay.getDayOfWeek().getValue();
-```
-
-### 2. **Calendar Grid Population**
-- Calculates empty cells before month starts
-- Fills actual dates in correct positions
-- Handles variable month lengths (28-31 days)
-- Adds empty cells after month ends
-
-### 3. **Date Navigation**
-- Month increment/decrement with year rollover
-- Year navigation independent of months
-- Maintains correct date boundaries
-
-## 🎯 What I Learned
-
-- **Java Swing GUI** development
-- **Event handling** with MouseListener and ActionListener
-- **Grid layouts** for organized displays
-- **Date manipulation** with Java Time API
-- **Object-oriented design** with multiple classes
-- **User interaction** and navigation
+- First day of month calculation
+- Calendar grid population with empty cells
+- Month/year navigation with rollover
+- Sunday detection for red coloring
 
 ## 🚀 How to Run
 
-```bash
+```java
 javac Year_Calendar_Application.java
 java Year_Calendar_Application
 ```
 
-## 📁 Files
-- `Year_Calendar_Application.java` - Main application
-- `Calendar.java` - Detailed month view class
-
 ## 👤 Author
 Mihanta Johane
+OOP Module Project - 28/07/2024
