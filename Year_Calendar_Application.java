@@ -31,7 +31,7 @@ public class Year_Calendar_Application extends JFrame {
 
         // Create and add the label for the year 2024 at the top
 
-               JLabel yearLabel = new JLabel("2024");
+              JLabel yearLabel = new JLabel(String.valueOf(LocalDate.now().getYear()));
                yearLabel.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0)); // Set border
                container.add(yearLabel, BorderLayout.NORTH);
                yearLabel.setFont(new Font("Serif", Font.PLAIN, 40)); // Set font for the year label
@@ -375,3 +375,4 @@ class Calendar extends JFrame {
         new Calendar(); // Create an instance of the Calendar class
     }
 }
+
