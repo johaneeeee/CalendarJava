@@ -75,29 +75,3 @@ java Year_Calendar_Application
 
 ## 👤 Author
 Mihanta Johane
-```
-
----
-
-**Version encore plus courte (si tu veux) :**
-
-```markdown
-# Java Calendar App 📅
-
-A calendar application with two views: a year overview (12 months in 3×4 grid) and a detailed monthly calendar. 
-
-**Features:**
-- View all 12 months at once
-- Click any month for detailed view
-- Navigate between months/years
-- Current day highlighted in pink
-- Sundays in red
-
-**Technologies:** Java Swing, Java Time API (LocalDate)
-
-**Data Structures:** 2D arrays for grid layout, GridLayout for GUI
-
-**Run:**
-`javac Year_Calendar_Application.java`
-then
- `java Year_Calendar_Application`
